@@ -29,7 +29,7 @@ The number of sampling elements - N = 125000 = 50 different values ​​of k * 
 
 ## Components
 - DataGenerator using for generate data with params by neural network
-- data.txt is generated file with data
+- data.txt is generated file with data that normalized (0, 1)
 - NeuralNetworkInvertedPendulum solution is neural network that using data.txt
 - Neural.workspace.RData is exported memory workspace from R with trained neural network
 

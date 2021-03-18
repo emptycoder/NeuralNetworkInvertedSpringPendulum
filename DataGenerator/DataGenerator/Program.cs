@@ -51,27 +51,22 @@ namespace DataGenerator
             _output.PrintRow(headers);
             _output.PrintLine();
 
-            int index;
-            int index1;
             for (decimal kIndex = k0; kIndex <= kMax; kIndex += (kMax - k0) / (kCount - 1))
             {
                 for (decimal vIndex = v0; vIndex < vMax; vIndex += dt)
                 {
-                    index = 0;
+                    var kNormIndex = 0;
                     for (decimal tIndex = t0; tIndex <= tMax; tIndex += (tMax - t0) / (tCount - 1))
                     {
-                        index1 = 0;
+                        var normalVariableIndex = 0;
                         StringBuilder stringBuilder = new StringBuilder();
                         var kNorm = (kIndex - k0) / (kMax - k0);
-                        var t = t0 + index * (kIndex * 10) / (tCount - 1);
-                        for (decimal tIndex1 = t0; tIndex1 <= tMax && index1 < countOfP; tIndex1 += (tMax - t0) / (tCount - 1), index1++)
+                        var t = t0 + kNormIndex * kIndex * 10 / (tCount - 1);
+                        for (decimal tIndex1 = t0; tIndex1 <= tMax && normalVariableIndex < countOfP; tIndex1 += (tMax - t0) / (tCount - 1), normalVariableIndex++)
                         {
-                            var preNorm = vIndex * DecimalMath.DecimalMath.Cos(kIndex * (t + index1 * dt));
+                            var preNorm = vIndex * DecimalMath.DecimalMath.Cos(kIndex * (t + normalVariableIndex * dt));
                             var valNorm = (preNorm - xMin) / (xMax - xMin);
                             
-                            // _output.PrintRow(
-                            //     valNorm.ToString(CultureInfo.InvariantCulture),
-                            //     kNorm.ToString(CultureInfo.InvariantCulture));
                             stringBuilder.AppendFormat("{0}, ", valNorm.ToString(CultureInfo.InvariantCulture));
                             // _output.PrintRow(
                             //     index.ToString(),
@@ -85,7 +80,7 @@ namespace DataGenerator
                             //
                         }
                         _output.PrintRow(stringBuilder.Append(kNorm).ToString());
-                        index++;
+                        kNormIndex++;
                         _output.PrintLine();
                     }
 
