@@ -1,5 +1,8 @@
 Neural network inverted spring pendulum
 =====================
+
+[NNET_logs](https://github.com/emptycoder/NeuralNetworkInvertedSpringPendulum/blob/master/nnet_log.txt)
+
 ## Condition
 The segment of the values ​​of the coefficient of elasticity k = [0.1; 0.2 + (# div 3) / 10].
 
