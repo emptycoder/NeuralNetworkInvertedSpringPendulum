@@ -1,7 +1,7 @@
 Neural network inverted spring pendulum
 =====================
 
-[NNET_logs](https://github.com/emptycoder/NeuralNetworkInvertedSpringPendulum/blob/master/nnet_log.txt)
+[NNET_logs](nnet_log.txt)
 
 ## Condition
 The segment of the values ​​of the coefficient of elasticity k = [0.1; 0.2 + (# div 3) / 10].
@@ -36,5 +36,5 @@ The number of sampling elements - N = 125000 = 50 different values ​​of k * 
 - NeuralNetworkInvertedPendulum solution is neural network that using data.txt
 - Neural.workspace.RData is exported memory workspace from R with trained neural network
 
-## About:
+## About
 Neural network inverted spring pendulum developing under the [MIT license](LICENSE).
